@@ -39,7 +39,7 @@ p, h1, h2, h3, h4, h5, h6, li, label, .stAlert, div[data-testid="stMarkdownConta
 .stTextArea textarea {
     background-color: rgba(255, 255, 255, 0.8) !important;
     font-family: 'EB Garamond', serif !important;
-    font-size: 18px !important;
+    font-size: 14px !important;
     line-height: 1.6 !important;
     color: #2c1e12 !important;
     border-radius: 10px;
