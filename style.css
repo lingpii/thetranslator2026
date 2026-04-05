@@ -1,52 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+/* Thêm vào style.css của bạn */
 
-.stApp {
-    background-color: #f5f0e8; 
-    background-image: 
-        linear-gradient(#e0e0e0 1px, transparent 1px),
-        linear-gradient(90deg, #e0e0e0 1px, transparent 1px);
-    background-size: 30px 30px;
-}
-
-/* 1. ÉP FONT CHO TOÀN BỘ CÁC THÀNH PHẦN CHỮ (Body) */
-p, h1, h2, h3, h4, h5, h6, li, label, .stAlert, div[data-testid="stMarkdownContainer"] > p {
+/* Thu nhỏ font cho tiêu đề Bản gốc/Bản dịch */
+h3 {
+    font-size: 22px !important;
     font-family: 'EB Garamond', serif !important;
+    color: #4b3621 !important;
+    margin-bottom: 15px !important;
 }
 
-/* 2. NGOẠI TRỪ TIÊU ĐỀ PIXEL ART CỦA BẠN (Giữ nguyên font chữ vuông) */
-.main-title {
-    color: #4b3621;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive !important;
-    font-size: 28px !important; 
-    font-weight: bold;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    padding: 20px 0px !important;
-    text-shadow: 2px 2px 0px #bd9a7a;
-    line-height: 1.5;
+/* Đóng khung cho khu vực Bản dịch và Bản gốc */
+div[data-testid="stVerticalBlock"] > div.element-container:has(.stInfo),
+div[data-testid="stVerticalBlock"] > div.element-container:has(.stTextArea) {
+    border: 2px solid #bd9a7a;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
 }
 
-.pixel-divider {
-    text-align: center;
-    color: #8b7355;
-    margin: 5px 0px !important;
-    font-size: 14px;
-}
-
-/* 3. CÁC Ô NHẬP LIỆU */
-.stTextArea textarea {
-    background-color: rgba(255, 255, 255, 0.8) !important;
+/* Tùy chỉnh giao diện cho các Tabs (nút bấm qua lại) */
+button[data-baseweb="tab"] {
     font-family: 'EB Garamond', serif !important;
-    font-size: 10px !important;
-    line-height: 1.6 !important;
-    color: #2c1e12 !important;
-    border-radius: 10px;
-}
-
-/* 4. TÙY CHỈNH NÚT BẤM */
-.stButton button {
-    font-family: 'EB Garamond', serif !important;
+    font-size: 18px !important;
     font-weight: bold !important;
+    color: #8b7355 !important;
+}
+
+button[aria-selected="true"] {
+    color: #4b3621 !important;
+    border-bottom-color: #4b3621 !important;
+}
+
+/* Tinh chỉnh khung cho st.info (Bản dịch) */
+.stInfo {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border: 1px dashed #bd9a7a !important;
+    color: #2c1e12 !important;
+    border-radius: 10px !important;
 }
