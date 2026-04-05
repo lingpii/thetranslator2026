@@ -30,39 +30,47 @@ def main():
     #PHẦN CODE CHÍNH 
 
     #Step 1: input (text or pdf)
+    # Trong hàm main(), thay thế đoạn code chọn input cũ:
     with col1: 
-        st.markdown("### Bản gốc:")
-        option = st.radio("Chọn input:", ["Nhập text", "Upload PDF"])
-
-        if option == "Nhập text":
-            text = st.text_area("Nhập văn bản...", height= 250)
-        else:
-            file = st.file_uploader("Upload PDF", type="pdf")
-            if file is not None: #upload thành công
-                text = read_pdf(file)  # từ pdf_reader.py
-                st.success("Done!")
-            else: text = " " #chưa upload thì chưa dịch 
-        if st.button("Translate it!", type ="secondary", use_container_width=True):
-            st.session_state.clicked = True
-    # Sau đó dùng chung 1 hàm dịch
-    #Step 2: Translate it 
-    with col2:
-        st.markdown("### Bản dịch của bạn: ")
-        if st.session_state.clicked and text.strip(): #Check input 
-            with st.spinner ("Đang dịch!"): 
-                result = translated_text(text)  # từ translator.py
-                st.info(result) #show output 
-                #Step 3: output and convert to audio 
-                audio_path = audio_converted(result)
-                if audio_path: 
-                    st.success("Done!")
-                    st.audio(audio_path)
-                    st.session_state.clicked = False #reset
-        else: st.write("✿✿✿")
+        st.markdown("### 📝 Bản gốc")
+        
+        # Sử dụng Tabs để tạo hiệu ứng nút bấm qua lại
+        tab1, tab2 = st.tabs(["⌨️ Nhập text", "📁 Upload PDF"])
+        
+        with tab1:
+            text_input = st.text_area("Văn bản...", height=250, key="text_input")
+        
+        with tab2:
+            file = st.file_uploader("Tải lên PDF", type="pdf", key="file_input")
+            pdf_text = ""
+            if file is not None:
+                pdf_text = read_pdf(file)
+                st.success("Đã đọc PDF!")
     
-    if st.session_state.clicked and not text.strip(): 
-        st.warning(" Bạn chưa nhập nội dung -_- !")
-        st.session_state.clicked = False #reset
+        # Xác định nội dung text dựa trên tab đang hoạt động (ưu tiên PDF nếu có file)
+        text = pdf_text if file else text_input
+    
+        if st.button("Translate it!", type="primary", use_container_width=True):
+            st.session_state.clicked = True
+        # Sau đó dùng chung 1 hàm dịch
+        #Step 2: Translate it 
+        with col2:
+            st.markdown("### Bản dịch của bạn: ")
+            if st.session_state.clicked and text.strip(): #Check input 
+                with st.spinner ("Đang dịch!"): 
+                    result = translated_text(text)  # từ translator.py
+                    st.info(result) #show output 
+                    #Step 3: output and convert to audio 
+                    audio_path = audio_converted(result)
+                    if audio_path: 
+                        st.success("Done!")
+                        st.audio(audio_path)
+                        st.session_state.clicked = False #reset
+            else: st.write("✿✿✿")
+        
+        if st.session_state.clicked and not text.strip(): 
+            st.warning(" Bạn chưa nhập nội dung -_- !")
+            st.session_state.clicked = False #reset
 
 if __name__ == "__main__": 
     main()
