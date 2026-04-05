@@ -1,4 +1,3 @@
-/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
 
@@ -8,16 +7,19 @@
         linear-gradient(#e0e0e0 1px, transparent 1px),
         linear-gradient(90deg, #e0e0e0 1px, transparent 1px);
     background-size: 30px 30px;
-    /* Font chung cho body để hợp với phong cách nhà văn */
+}
+
+/* 1. ÉP FONT CHO TOÀN BỘ CÁC THÀNH PHẦN CHỮ (Body) */
+p, h1, h2, h3, h4, h5, h6, li, label, .stAlert, div[data-testid="stMarkdownContainer"] > p {
     font-family: 'EB Garamond', serif !important;
 }
 
-/* Tiêu đề phong cách Pixel Art */
+/* 2. NGOẠI TRỪ TIÊU ĐỀ PIXEL ART CỦA BẠN (Giữ nguyên font chữ vuông) */
 .main-title {
     color: #4b3621;
     text-align: center;
     font-family: 'Press Start 2P', cursive !important;
-    font-size: 28px !important; /* Font này rất to nên 28px-30px là vừa đẹp */
+    font-size: 28px !important; 
     font-weight: bold;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
@@ -33,7 +35,7 @@
     font-size: 14px;
 }
 
-/* Các ô nhập liệu */
+/* 3. CÁC Ô NHẬP LIỆU */
 .stTextArea textarea {
     background-color: rgba(255, 255, 255, 0.8) !important;
     font-family: 'EB Garamond', serif !important;
@@ -43,7 +45,7 @@
     border-radius: 10px;
 }
 
-/* Tùy chỉnh màu nút bấm để tiệp với màu tiêu đề */
+/* 4. TÙY CHỈNH NÚT BẤM */
 .stButton button {
     font-family: 'EB Garamond', serif !important;
     font-weight: bold !important;
