@@ -58,7 +58,7 @@ def main():
                     st.success("Done!")
                     st.audio(audio_path)
                     st.session_state.clicked = False #reset
-        else: st.write("Đang dịch nè!")
+        else: st.write("✿✿✿")
     
     if st.session_state.clicked and not text.strip(): 
         st.warning(" Bạn chưa nhập nội dung -_- !")
