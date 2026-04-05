@@ -18,7 +18,7 @@ def main():
     # Hiển thị Title với Style đã định nghĩa
 
     
-    st.markdown('<div class="pixel-divider">𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pixel-divider" style="text-align: center;>𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼</div>', unsafe_allow_html=True)
     st.markdown('<h1 class="main-title">✦ The Translator ✦</h1>', unsafe_allow_html=True)
     st.markdown('<div class="pixel-divider">──────────────────── ⋆⋅𖤓⋅⋆ ────────────────────</div>', unsafe_allow_html=True)
     
