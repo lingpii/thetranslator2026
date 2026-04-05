@@ -1,40 +1,38 @@
-/* Thêm vào style.css của bạn */
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
 
-/* Thu nhỏ font cho tiêu đề Bản gốc/Bản dịch */
-h3 {
-    font-size: 22px !important;
+/* Nền và font chữ tổng thể */
+.stApp {
+    background-color: #f5f0e8 !important; 
+    background-image: 
+        linear-gradient(#e0e0e0 1px, transparent 1px),
+        linear-gradient(90deg, #e0e0e0 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
     font-family: 'EB Garamond', serif !important;
-    color: #4b3621 !important;
-    margin-bottom: 15px !important;
 }
 
-/* Đóng khung cho khu vực Bản dịch và Bản gốc */
-div[data-testid="stVerticalBlock"] > div.element-container:has(.stInfo),
-div[data-testid="stVerticalBlock"] > div.element-container:has(.stTextArea) {
-    border: 2px solid #bd9a7a;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+/* Tiêu đề chính */
+.main-title {
+    color: #4b3621;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 24px !important; 
+    padding: 10px 0px !important;
+    text-shadow: 1px 1px 0px #bd9a7a;
 }
 
-/* Tùy chỉnh giao diện cho các Tabs (nút bấm qua lại) */
-button[data-baseweb="tab"] {
-    font-family: 'EB Garamond', serif !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-    color: #8b7355 !important;
+/* Đóng khung cho khu vực nội dung */
+div[data-testid="stMarkdownContainer"] > h3 {
+    font-size: 20px !important;
+    border-bottom: 1px solid #bd9a7a;
+    width: fit-content;
 }
 
-button[aria-selected="true"] {
-    color: #4b3621 !important;
-    border-bottom-color: #4b3621 !important;
-}
-
-/* Tinh chỉnh khung cho st.info (Bản dịch) */
-.stInfo {
-    background-color: rgba(255, 255, 255, 0.6) !important;
-    border: 1px dashed #bd9a7a !important;
-    color: #2c1e12 !important;
+/* Bo viền các ô nhập liệu và kết quả */
+.stTextArea textarea, .stInfo {
+    border: 1px solid #bd9a7a !important;
     border-radius: 10px !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    font-family: 'EB Garamond', serif !important;
 }
