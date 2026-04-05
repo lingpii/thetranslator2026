@@ -1,0 +1,50 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+.stApp {
+    background-color: #f5f0e8; 
+    background-image: 
+        linear-gradient(#e0e0e0 1px, transparent 1px),
+        linear-gradient(90deg, #e0e0e0 1px, transparent 1px);
+    background-size: 30px 30px;
+    /* Font chung cho body để hợp với phong cách nhà văn */
+    font-family: 'EB Garamond', serif !important;
+}
+
+/* Tiêu đề phong cách Pixel Art */
+.main-title {
+    color: #4b3621;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 28px !important; /* Font này rất to nên 28px-30px là vừa đẹp */
+    font-weight: bold;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding: 20px 0px !important;
+    text-shadow: 2px 2px 0px #bd9a7a;
+    line-height: 1.5;
+}
+
+.pixel-divider {
+    text-align: center;
+    color: #8b7355;
+    margin: 5px 0px !important;
+    font-size: 14px;
+}
+
+/* Các ô nhập liệu */
+.stTextArea textarea {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    font-family: 'EB Garamond', serif !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    color: #2c1e12 !important;
+    border-radius: 10px;
+}
+
+/* Tùy chỉnh màu nút bấm để tiệp với màu tiêu đề */
+.stButton button {
+    font-family: 'EB Garamond', serif !important;
+    font-weight: bold !important;
+}
