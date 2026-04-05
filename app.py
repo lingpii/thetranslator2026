@@ -50,7 +50,7 @@ def main():
         # Xác định nội dung text dựa trên tab đang hoạt động (ưu tiên PDF nếu có file)
         text = pdf_text if file else text_input
     
-        if st.button("Translate it!", type="primary", use_container_width=True):
+        if st.button("Translate it!", type="secondary", use_container_width=True):
             st.session_state.clicked = True
         # Sau đó dùng chung 1 hàm dịch
         #Step 2: Translate it 
