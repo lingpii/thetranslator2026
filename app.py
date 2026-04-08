@@ -142,14 +142,18 @@ def main() -> None:
     st.set_page_config(page_title="The Translator", page_icon=":scroll:", layout="wide")
     local_css("style.css")
 
-    st.markdown('<div class="hero-shell">', unsafe_allow_html=True)
-    st.markdown('<div class="pixel-divider">THE TRANSLATOR</div>', unsafe_allow_html=True)
-    st.markdown('<h1 class="main-title">Translate, summarize, and listen in one flow</h1>', unsafe_allow_html=True)
     st.markdown(
-        '<p class="hero-subtitle">Paste text or upload a PDF, then turn it into a cleaner Vietnamese output with optional audio.</p>',
+        """
+        <div class="hero-shell">
+            <div class="hero-line"><span></span><span class="hero-star">✶</span><span></span></div>
+            <div class="pixel-divider">THE TRANSLATOR</div>
+            <h1 class="main-title">Translate, summarize, and listen in one flow</h1>
+            <p class="hero-subtitle">Paste text or upload a PDF, then turn it into a cleaner Vietnamese output with optional audio.</p>
+            <div class="hero-line"><span></span><span class="hero-star">✶</span><span></span></div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
-    st.markdown("</div>", unsafe_allow_html=True)
 
     col1, col2 = st.columns([1.05, 1], gap="large")
 
