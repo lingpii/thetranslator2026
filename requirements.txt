@@ -1,0 +1,11 @@
+streamlit
+pypdf
+googletrans==3.1.0a0
+edge-tts
+legacy-cgi
+deep-translator
+newspaper3k
+underthesea
+scikit-learn
+lxml_html_clean
+
